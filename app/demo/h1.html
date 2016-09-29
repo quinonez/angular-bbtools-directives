@@ -1,0 +1,29 @@
+<div ng-controller="RandomCtrl">
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-xs-12">
+        <a href="#/" class="btn btn-primary btn-block" style="font-size: 20px;"><span class="glyphicon glyphicon-arrow-left"></span> Volver</a>
+        <h1>Generador de Números Aleatorios.</h1>
+      </div>
+
+
+      <div class="col-xs-12">
+      <h2>James Random</h2>
+      <script>
+        var gen = new JamesRandom({seed: 12345});
+        var A = [];
+        var sizeA = 40;
+        gen.FlatArray( sizeA, A );
+        console.log(A);
+        //window.alert(A);
+        for(var i = 0; i < A.length; i++){
+          document.write("<br>"+A[i]);
+        }
+      </script>
+      </div>
+
+
+    </div>
+  </div>
+</div>

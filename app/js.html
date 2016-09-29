@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+  <title>The Building Blocks and Tools JavaScript Library.</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+
+    <script src="../node_modules/jamesrandom/JamesRandom.js"></script>
+    <script src="../dist/bbtools.min.js"></script>
+</head>
+
+
+
+<body>
+
+<div id="c1">
+<script>
+// var JamesRandom = require('jamesrandom');
+ var gen = new JamesRandom({seed: 12345});
+ var A = [];
+ var sizeA = 40;
+ gen.FlatArray( sizeA, A );
+ window.alert(A);
+</script>
+
+</div>
+
+</body>
+
+
+
+</html>
+

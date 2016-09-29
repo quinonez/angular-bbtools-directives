@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" ng-app="BBTApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>The Building Blocks and Tools JavaScript Library.</title></head>
+
+
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <!-- 
+  <script src="bower_components/angular-touch/angular-touch.js></script> 
+  -->
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="app.config.js"></script>
+  <script src="app.animations.js"></script>
+  <script src="app.directives.js"></script>
+  <script src="app.controllers.js"></script>
+  <script src="app.filters.js"></script>
+  <script src="app.services.js"></script>
+  <script src="bower_components/threejs/build/three.js"></script>
+  <script src="bower_components/d3/d3.js" charset="utf-8"></script>
+
+  <script src='bower_components/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ 
+      TeX: { equationNumbers: {autoNumber: "AMS"} } ,
+      tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}    
+    });					
+  </script>
+
+
+  <script src="../node_modules/jamesrandom/JamesRandom.js"></script>
+
+<body >
+
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+<input  type="hidden" ng-model="ingreso"  ng-init="ingreso.value='noIdentificado'" >
+        <a class="navbar-brand" href="/*"><span class="glyphicon glyphicon-home"></span> BBTools 1.0.0</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#/random"><span class="glyphicon glyphicon-tags"></span> Random Numbers</a></li>
+          <li><a href="#/pdf"><span class="glyphicon glyphicon-user"></span> PDF</a></li>
+          <li><a href="#/h1"><span class="glyphicon glyphicon-road"></span> H1</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="view-container">
+    <div ng-view class="view-frame">
+    </div>
+  </div>
+
+</body>
+</html>
+

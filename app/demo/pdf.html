@@ -1,0 +1,242 @@
+<div ng-controller="RandomCtrl">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<a href="#/mi-cuenta-docente/crear-simulacro-docente" class="btn btn-primary btn-block" style="font-size: 20px;"><span class="glyphicon glyphicon-arrow-left"></span> Volver</a>
+<h1>Generador de Números Aleatorios.</h1>
+
+</div>
+
+<div class="col-xs-12">
+
+
+<h2>Introducir Pregunta</h2>
+
+<form novalidate name="FormularioPregunta" class="simple-form" role="form">
+<input type="hidden"  name="user" ng-model="formdata.user" ng-init="formdata.user=''">
+<input type="hidden"  name="id" ng-model="formdata.id" ng-init="formdata.id=''">
+<input type="hidden"  name="funcion" ng-model="formdata.funcion" ng-init="formdata.funcion=''">
+<input type="hidden"  name="date" ng-model="formdata.date" ng-init="formdata.date=''">
+<input type="hidden" name="course" ng-model="formdata.course" ng-init="formdata.course='fisica11'">
+  
+
+
+<div class="panel panel-primary">
+<div class="panel-heading panel-title">Forma - Pregunta</div>
+<div class="panel-body">
+
+
+    <div class="form-group">
+      <label for="tipopregunta"><h3><span class="label label-danger">Tipo de Pregunta:</span></h3></label>
+      <select ng-model="formdata.tipopregunta" name="tipopregunta" ng-init="formdata.tipopregunta='closed'">
+        <option value="closed" ng-selected="true">Cerrada.</option>
+        <option value="opened">Abierta.</option>
+      </select>
+    </div>
+
+
+    <div class="form-group">
+      <label for="title"><h3><span class="label label-danger">IDTítulo de la pregunta:</span></h3></label>
+      <input type="text" class="form-control" name="title" ng-model="formdata.title" required><span ng-show="FormularioPregunta.title.$error.required && !FormularioPregunta.title.$pristine.required" >Campo obligatorio</span>
+      <p style="text-align: justify;">Es un texto que identifica a la pregunta. Un usuario no puede tener dos o más preguntas con el mismo IDTítulo. No se mostrará en el simulacro. No puede llevar espacios en blanco. No puede llevar símbolos, por ejemplo: "´@|}(^/".#)*+=[]!¿?. La primera letra del nombre de archivo debe ser una letra. Se pueden usar números después de la primera letra del nombre de archivo.
+ </p>
+    </div>
+
+
+    <div class="form-group">
+      <label for="competencia"><h3><span class="label label-danger">Competencia:</span></h3></label>
+      <select name="competencia" ng-model="formdata.competencia" ng-init="formdata.competencia = 'conocimientos'">
+        <option value="conocimientos" ng-selected="true">Uso Comprensivo del Conocimiento Científico.</option>
+        <option value="fenomenologia">Explicación de Fenómenos.</option>
+        <option value="indagacion">Indagación.</option>
+      </select>
+    </div>
+
+    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#competencias">Explicación</button>
+
+    <div id="competencias" class="collapse">
+    <div class="panel panel-info">
+      <div class="panel-heading panel-title">Uso Comprensivo del Conocimiento Científico.</div>
+      <div class="panel-body">
+        <p style="text-align: justify;">Es la capacidad de comprender y usar nociones, conceptos y teorías de las ciencias naturales en la solución de problemas, y de establecer relaciones entre conceptos y conocimientos adquiridos, y fenómenos que se observan con frecuencia.
+<ol><li>El estudiante logra identificar las características de algunos fenómenos de la naturaleza basándose en el análisis de información y conceptos propios del conocimiento científico. Se cumple cuando el estudiante:
+<ul>
+<li>Identifica características de los organismos, sus interrelaciones con otros y con los fenómenos que ocurren en ecosistemas, para comprender la dinámica de lo vivo.</li>
+<li><mark style="background-color: yellow;">Identifica las fuerzas, torques, energías, masas, cargas, temperaturas, longitudes de ondas y cualquier otra variable o constante física que determine la dinámica de un sistema.</mark></li>
+<li>Identifica las propiedades y estructura de la materia, y diferencia elementos, compuestos y mezclas.</li>
+<li><mark style="background-color: yellow;">Reconoce posibles cambios en el entorno por la explotación de un recurso natural o el uso de una tecnología.</mark></li>
+</ul>
+</li>
+<li>
+El estudiante logra asociar fenómenos naturales con conceptos propios del conocimiento científico. Esto quiere decir que una vez se han reconocido las características principales de un fenómeno natural, el siguiente paso es asociar esas características con conceptos preestablecidos en las teorías, de manera que sea posible establecer relaciones. Se cumple cuando el estudiante:
+<ul>
+<li>Establece relaciones entre conceptos y fenómenos biológicos para comprender su entorno.</li>
+<li><mark style="background-color: yellow;">Relaciona las distintas variables y constantes físicas que determinan la dinámica de un sistema mediante el uso de los principios y leyes de la física.</mark></li>
+<li>Establece relaciones entre conceptos químicos (ión, molécula, separación de mezclas, solubilidad, gases ideales, estequiometría, etcétera) con distintos fenómenos naturales.</li>
+</ul>
+</li>
+</p>
+      </div>
+    </div>
+
+<div class="panel panel-info">
+<div class="panel-heading panel-title">Explicación de Fenómenos.</div>
+<div class="panel-body">
+<p style="text-align: justify;">Es la capacidad de construir explicaciones y comprender argumentos y modelos que den razón de fenómenos, y de establecer la validez o coherencia de una afirmación o de un argumento relacionado con un fenómeno o problema científico. 
+<ol><li>El estudiante logra explicar cómo ocurren algunos fenómenos de la naturaleza sobre la base de observaciones, patrones y conceptos propios del conocimiento científico. Se cumple cuando el estudiante:</li>
+<ul>
+<li>Analiza la dinámica interna de los organismos y de los ecosistemas, y da razón de cómo funcionan sus componentes por separado y en conjunto para mantenerse en equilibrio.</li>
+<li><mark style="background-color: yellow;">Elabora explicaciones al relacionar las variables de estado que describen un sistema, argumentando a partir de los conceptos y leyes de la física.</mark></li>
+<li>Analiza distintos fenómenos naturales y establece argumentos para explicarlos, usando distintos conceptos químicos (ion, molécula, separación de mezclas, solubilidad, gases ideales, estequiometría, etcétera).</li>
+</ul>
+<li>El estudiante logra modelar fenómenos de la naturaleza basándose en el análisis de variables, la relación entre dos o más conceptos del conocimiento científico, y la evidencia derivada de investigaciones científicas. El estudiante debe utilizar alguna versión de los modelos básicos que se estudian en las ciencias naturales hasta grado 11°, para representar o explicar el fenómeno que se le presente. En consecuencia, Se cumple cuando el estudiante:</li>
+<ul>
+<li>Reconoce el modelo biológico, <mark style="background-color: yellow;">físico</mark> o químico apropiado para representar un fenómeno natural.</li>
+<li>Usa modelos biológicos, <mark style="background-color: yellow;">físicos</mark> y químicos para explicar y predecir fenómenos naturales.</li>
+</ul>
+<li>El estudiante logra analizar el potencial uso de los recursos naturales o artefactos y sus efectos sobre el entorno y la salud, así como las posibilidades de desarrollo que brindan para las comunidades. Se cumple cuando el estudiante:</li>
+<ul>
+<li>Usa modelos biológicos, <mark style="background-color: yellow;">físicos</mark> y químicos para explicar y predecir fenómenos naturales.</li>
+<li>Explica cómo la explotación de un recurso natural o el uso de una tecnología tiene efectos positivos y/o negativos en las personas y en el entorno.</li>
+<li>Explica el uso correcto y seguro de una tecnología o artefacto en un contexto específico.</li>
+</ul>
+</ol>
+</p>
+</div>
+</div>
+
+
+<div class="panel panel-info">
+<div class="panel-heading panel-title">Indagación.</div>
+<div class="panel-body">
+<p style="text-align: justify;">El proceso de indagación en ciencias incluye, entre otras cosas, observar detenidamente la situación, formular preguntas, recurrir a libros u otras fuentes de información, hacer predicciones, plantear experimentos, identificar variables, realizar mediciones, y organizar y analizar resultados. En el aula de clases no se trata de que el alumno repita un protocolo ya establecido o elaborado por el docente, sino de que el estudiante formule sus propias preguntas y diseñe su propio procedimiento.</p>
+<ol>
+
+<li>El estudiante logra establecer qué tipo de preguntas pueden contestarse mediante una investigación científica. Se cumple cuando el estudiante:
+<ul>
+<li>Comprende qué tipo de preguntas son pertinentes para una investigación científica.</li>
+<li>Reconoce la importancia de la evidencia para comprender fenómenos naturales.</li>
+</ul></li>
+
+<li>El estudiante logra utilizar procedimientos para evaluar predicciones. Se cumple cuando el estudiante:<ul>
+<li>Propone hipótesis de eventos o fenómenos que sean consistentes con conceptos de la ciencia.</li>
+<li>Vincula información para evaluar una predicción o hipótesis.</li>
+<li>Diseña experimentos para dar respuesta a sus preguntas.</li>
+<li>Elige y utiliza instrumentos adecuados para reunir datos.</li>
+<li>Reconoce la necesidad de registrar y clasificar la información para realizar un buen análisis.</li>
+</ul></li>
+
+<li>El estudiante logra observar y relacionar patrones en los datos para evaluar las predicciones. Se cumple cuando el estudiante:<ul>
+<li>Representa datos en gráficas y tablas.</li>
+<li>Interpreta y sintetiza datos representados en texto, gráficas, dibujos, diagramas o tablas.</li>
+<li>Identifica patrones y regularidades en los datos.</li>
+</ul></li>
+
+<li>El estudiante logra derivar conclusiones sobre la base de conocimientos científicos y evidencia de su propia investigación y la de otros. Este objetivo se cumple cuando el estudiante:<ul>
+<li>Hace predicciones basado en información, patrones y regularidades.</li>
+<li>Elabora conclusiones a partir de información o evidencias que las respalden.</li>
+<li>Determina si los resultados derivados de una investigación son suficientes y pertinentes para sacar conclusiones en una situación dada.</li>
+<li>Establece relaciones entre resultados y conclusiones con algunos conceptos, principios y leyes de la ciencia.</li>
+<li>Comunica de forma apropiada el proceso y los resultados de investigación en ciencias naturales.</li>
+</ul></li>
+
+</ol>
+
+
+
+</div>
+</div>
+</div>
+
+
+    <div class="form-group">
+      <label for="tipotema"><h3><span class="label label-danger">Tema:</span></h3></label>
+      <select name="tipotema" ng-model="formdata.tipotema" ng-init="formdata.tipotema = 'mecanica'">
+        <option value="mecanica" ng-selected="true">Mecánica.</option>
+        <option value="electromagnetismo">Electromagnetismo.</option>
+        <option value="electromagnetismo">Fluidos y Termodinámica.</option>
+        <option value="ondas">Ondas.</option>
+        <option value="optica">Óptica.</option>
+        <option value="cts">Ciencia Tecnología y Sociedad.</option>
+      </select>
+    </div>
+
+
+
+
+    <div class="form-group">
+      <label for="content"><h3><span class="label label-danger">Contenido de la pregunta:</span></h3></label>
+      <textarea class="form-control" name="contenidopregunta" ng-model="formdata.contenidopregunta" placeholder="Contenido Pregunta" required></textarea><span ng-show="FormularioPregunta.contenidopregunta.$error.required && !FormularioPregunta.contenidopregunta.$pristine.required"">Campo requerido</span>
+    </div>
+
+    <div ng-show="formdata.tipopregunta == 'closed'" class="form-group">
+      <label for="right_answer"><h3><span class="label label-danger">Respuesta Correcta:</span></h3></label>
+      <textarea class="form-control" name="right_answer" ng-model="formdata.right_answer" placeholder="Respuesta Correcta" required></textarea><span ng-show="FormularioPregunta.right_answer.$error.required && !FormularioPregunta.right_answer.$pristine.required"">Campo requerido</span>
+    </div>
+
+    <div ng-show="formdata.tipopregunta == 'closed'" class="form-group">
+      <label for="wrong_answer1"><h3><span class="label label-danger">Respuesta Incorrecta 1:</span></h3></label>
+      <textarea class="form-control" name="wrong_answer1" ng-model="formdata.wrong_answer1" placeholder="Respuesta Errada 1" required></textarea><span ng-show="FormularioPregunta.wrong_answer1.$error.required && !FormularioPregunta.wrong_answer1.$pristine.required"">Campo requerido</span>
+    </div>
+    <div ng-show="formdata.tipopregunta == 'closed'" class="form-group">
+      <label for="wrong_answer2"><h3><span class="label label-danger">Respuesta Incorrecta 2:</span></h3></label>
+      <textarea class="form-control" name="wrong_answer2" ng-model="formdata.wrong_answer2" placeholder="Respuesta Errada 2" required></textarea><span ng-show="FormularioPregunta.wrong_answer2.$error.required&& !FormularioPregunta.wrong_answer2.$pristine.required"">Campo requerido</span>
+    </div>
+    <div ng-show="formdata.tipopregunta == 'closed'" class="form-group">
+      <label for="wrong_answer3"><h3><span class="label label-danger">Respuesta Incorrecta 3:</span></h3></label>
+      <textarea class="form-control" name="wrong_answer3" ng-model="formdata.wrong_answer3" placeholder="Respuesta Errada 3" required></textarea><span ng-show="FormularioPregunta.wrong_answer3.$error.required && !FormularioPregunta.wrong_answer3.$pristine.required"">Campo requerido</span>
+    </div>
+
+    <div ng-show="formdata.tipopregunta == 'opened'" class="form-group">
+      <label for="pattern_answer"><h3><span class="label label-danger">Patrón de Respuesta Correcta:</span></h3></label>
+      <textarea class="form-control" name="pattern_answer" ng-model="formdata.pattern_answer" placeholder="Indicio de respuesta"></textarea>
+      <p style="text-align: justify;">Escribe las palabras claves (tokens) que consideras que no pueden faltar en la respuesta que el estudiante escriba en el simulacro. <strong>Estos tokens deben ir emparedados por comillas dobles y separados por comas sin espacios entre ellas y los tokens. </strong> Por ejemplo un posible patrón de respuesta sería: "cuerpo","ha","caído","cae","cayó","49","m/s"</p>
+    </div>
+
+
+    <div class="form-group">
+      <label for="images"><h3><span class="label label-danger">Nombres de Archivos Imágenes:</span></h3></label>
+      <textarea class="form-control" name="images" ng-model="formdata.images" placeholder="Nombre del archivo"></textarea>
+      <p style="text-align: justify;">Escribe los nombres de los archivos de las imágenes (tokens) que van en la pregunta. <strong>Estos tokens deben ir emparedados por comillas dobles y separados por comas sin espacios entre ellas y los tokens.</strong> Por ejemplo si el IDTítulo de la pregunta es <em>fuerzas-001 </em>, y si en esa pregunta hay dos imágenes tipo png, y si tu Nombre-De-Usuario Profesor es <em>pepe</em> entonces debes escribir en la caja de arriba: 
+<br><br>"pepe_imgfi11_polinomios-001_1.png","pepe_imgfi11_fuerzas-001_2.png"<br><br>
+Las extensiones permitidas son png, svg, jpg, y jpeg.</p> 
+    </div>
+
+
+<div class="panel panel-info">
+<div class="panel-heading panel-title">Medios Audiovisuales</div>
+<div class="panel-body">
+<p style="text-align: justify;">Si vas a subir imágenes al Dropbox para esta pregunta, los nombres de los archivos de las imágenes deben cumplir los siguientes requisitos:</p>
+<ul>
+<li>No puede llevar espacios en blanco.</li>
+<li>No puede llevar símbolos, por ejemplo: "´@|}(^/".#)*+=[]!¿?</li>
+<li>La primer letra del nombre de archivo debe ser una letra.</li>
+<li>Se pueden usar números después de la primera letra del nombre de archivo.</li>
+</ul>
+<strong>Debido a que las preguntas serán utilizadas también para los simulacros tomados a la población con discapacidad visual, por lo tanto los textos de las preguntas no pueden ser imágenes.</strong>
+
+</div>
+</div>
+
+
+    <br><br>
+    <div>
+      <button type="submit" class="btn btn-success btn-block" ng-disabled="!FormularioPregunta.$valid" ng-click="crearPregunta(formdata)">Subir Pregunta</button>
+    </div>
+
+  </div>
+  </div>
+</form>
+</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+</div>
